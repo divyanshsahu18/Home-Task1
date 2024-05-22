@@ -1,0 +1,153 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Header styles */
+header {
+    background-color: #001f3f;
+    color: hsl(0, 0%, 100%);
+    padding: 7px;
+    text-align: center;
+}
+
+/* Main content styles */
+main {
+    display: flex;
+    padding: 7px;
+}
+
+/* Article styles */
+article {
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin-bottom: 10px;
+    flex: 1; /* Adjusted flex property */
+}
+
+article img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.article-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-header {
+    font-size: 1.1em;
+    margin-bottom: 5px; 
+}
+
+.article-date {
+    margin-bottom: 7px; /* Add margin bottom to separate date and continue reading */
+}
+
+/* Section styles */
+#news-section {
+    flex: 0 0 80%; /* Section takes 60% of the available space */
+    margin-right: 20px; /* Add margin between section and aside */
+}
+
+/* Aside styles */
+aside {
+    flex: 0 0 20%; /* Aside takes 40% of the available space */
+    background-color: #f0f0f0; /* Added background color */
+    padding: 10px; /* Added padding */
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+#searchInput {
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 5px;
+}
+
+.search-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 5px 0;
+    width: calc(100% - 20px); /* Adjusted width */
+}
+
+.search-options li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.search-options li:hover {
+    background-color: #2d385a;
+    color: #f0f0f0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #001f3f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Continue reading button styles */
+.continue-reading {
+    display: block;
+    margin-top: 10px;
+    background-color: #08243c;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.continue-reading:hover {
+    background-color: #3b6da2;
+    color: #000000;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column; /* Change to column layout for smaller screens */
+    }
+
+    article, aside {
+        width: 100%; /* Make articles and aside take full width on smaller screens */
+        flex: none; /* Remove flex properties for article and aside */
+        margin-left: 0; /* Remove margin for smaller screens */
+    }
+
+    aside {
+        order: 1; /* Move aside below articles on smaller screens */
+    }
+}
